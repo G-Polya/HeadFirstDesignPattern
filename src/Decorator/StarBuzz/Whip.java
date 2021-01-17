@@ -1,4 +1,4 @@
-package Decorator;
+package Decorator.StarBuzz;
 
 public class Whip extends ContimentDecorator{
     Beverage beverage;

@@ -1,7 +1,7 @@
-package Decorator;
+package Decorator.StarBuzzSize;
 
-public class Espresso extends Beverage{
-    public Espresso() {
+public class DarkRoast extends Beverage {
+    public DarkRoast() {
         description = "에스프레소";
     }
     public  double cost(){

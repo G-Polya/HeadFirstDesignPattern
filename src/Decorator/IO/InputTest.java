@@ -9,10 +9,10 @@ public class InputTest {
     public static void main(String[] args){
         int c;
         try{
-            InputStream in = new LowercaseInputStream(new BufferedInputStream((new FileInputStream("./test.txt"))));
+            InputStream in = new LowercaseInputStream(new BufferedInputStream((new FileInputStream("C:\\Users\\KimHeeSu\\Documents\\HeadFirstDesignPattern\\src\\Decorator\\IO\\test.txt"))));
 
             while((c = in.read()) >= 0) {
-                System.out.println((char)c);
+                System.out.print((char)c);
             }
 
             in.close();

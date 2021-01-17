@@ -1,4 +1,4 @@
-package Decorator;
+package Decorator.StarBuzz;
 
 public abstract class Beverage {
     String description ="제목없음";
@@ -8,4 +8,6 @@ public abstract class Beverage {
     }
 
     public abstract double cost();
+
+
 }

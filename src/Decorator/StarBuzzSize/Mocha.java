@@ -1,6 +1,6 @@
-package Decorator;
+package Decorator.StarBuzzSize;
 
-public class Mocha extends ContimentDecorator{
+public class Mocha extends ContimentDecorator {
     Beverage beverage;
 
     public Mocha(Beverage beverage) {

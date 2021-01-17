@@ -1,9 +1,9 @@
-package Decorator;
+package Decorator.StarBuzzSize;
 
-public class SteamMilk extends ContimentDecorator{
+public class Whip extends ContimentDecorator {
     Beverage beverage;
 
-    public SteamMilk(Beverage beverage) {
+    public Whip(Beverage beverage) {
         this.beverage = beverage;
     }
 
@@ -14,6 +14,6 @@ public class SteamMilk extends ContimentDecorator{
 
     @Override
     public String getDescription() {
-        return beverage.getDescription() + ", 스팀밀크";
+        return beverage.getDescription() + ", 휘핑크림";
     }
 }
