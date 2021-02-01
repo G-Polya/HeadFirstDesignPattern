@@ -48,4 +48,8 @@ public class Menu extends MenuComponent {
             menuComponent.print();
         }
     }
+
+    public Iterator createIterator() {
+        return new CompositeIterator(menuComponents.iterator());
+    }
 }
