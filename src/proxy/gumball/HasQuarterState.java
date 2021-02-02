@@ -1,10 +1,9 @@
-package state.gumball;
-
-import org.w3c.dom.ls.LSOutput;
+package proxy.gumball;
 
 import java.util.Random;
 
 public class HasQuarterState implements State {
+    private static final long serialVersionUID = 2L;
     Random randomWinner = new Random(System.currentTimeMillis());
     GumballMachine gumballMachine;
 
@@ -12,32 +11,30 @@ public class HasQuarterState implements State {
         this.gumballMachine = gumballMachine;
     }
 
-    @Override
     public void insertQuarter() {
-        System.out.println("동전은 한 개만 넣어주세요");
+        System.out.println("You can't insert another quarter");
     }
 
-    @Override
     public void ejectQuarter() {
-        System.out.println("동전이 반환됩니다");
+        System.out.println("Quarter returned");
         gumballMachine.setState(gumballMachine.getNoQuarterState());
     }
 
-    @Override
     public void turnCrank() {
-        System.out.println("손잡이를 돌리셨습니다");
+        System.out.println("You turned...");
         int winner = randomWinner.nextInt(10);
-        if ((winner == 0) && (gumballMachine.getCount() > 1)) {
+        if (winner == 0) {
             gumballMachine.setState(gumballMachine.getWinnerState());
-        }else{
+        } else {
             gumballMachine.setState(gumballMachine.getSoldState());
         }
-        gumballMachine.setState(gumballMachine.getSoldState());
     }
 
-
-    @Override
     public void dispense() {
-        System.out.println("알맹이가 나갈 수 없습니다.");
+        System.out.println("No gumball dispensed");
+    }
+
+    public String toString() {
+        return "waiting for turn of crank";
     }
 }
