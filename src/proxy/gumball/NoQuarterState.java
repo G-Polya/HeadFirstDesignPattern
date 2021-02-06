@@ -1,7 +1,7 @@
 package proxy.gumball;
 
 public class NoQuarterState implements State {
-    GumballMachine gumballMachine;
+    transient GumballMachine gumballMachine;
 
     public NoQuarterState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;

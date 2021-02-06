@@ -1,19 +1,25 @@
 package proxy.gumball;
 
+import java.rmi.Naming;
+
 public class GumballMachineTestDrive {
     public static void main(String[] args) {
-        int count = 0;
 
-//        if (args.length < 2) {
-//            System.out.println("GumBallMachine <name> <inventory>");
-//            System.exit(1);
-//        }
+        GumballMachineRemote gumballMachine = null;
+        int count;
+        if(args.length < 2){
+            System.out.println("GumballMachine <name> <inventory>");
+            System.exit(1);
+        }
 
-        count = Integer.parseInt("112");
-        GumballMachine gumballMachine = new GumballMachine("Seattle", count);
+        try {
+            count = Integer.parseInt(args[1]);
 
-        GumballMonitor monitor = new GumballMonitor(gumballMachine);
+            gumballMachine = new GumballMachine(args[0], count);
+            Naming.rebind("//" + args[0] + "/gumballmachine", gumballMachine);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        monitor.report();
     }
 }

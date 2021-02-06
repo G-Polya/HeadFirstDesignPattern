@@ -1,6 +1,7 @@
 package proxy.gumball;
+import java.io.*;
 
-public interface State {
+public interface State extends Serializable{
 
     public void insertQuarter();
     public void ejectQuarter();
