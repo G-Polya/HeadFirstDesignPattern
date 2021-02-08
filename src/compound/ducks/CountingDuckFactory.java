@@ -1,25 +1,23 @@
 package compound.ducks;
 
-import templatemethod.sort.Duck;
-
 public class CountingDuckFactory extends AbstractDuckFactory {
     @Override
-    public Quackalble createMallardDuck() {
+    public Quackable createMallardDuck() {
         return new QuackCounter(new MallardDuck());
     }
 
     @Override
-    public Quackalble createRedheadDuck() {
+    public Quackable createRedheadDuck() {
         return new QuackCounter(new RedheadDuck());
     }
 
     @Override
-    public Quackalble createDuckCall() {
+    public Quackable createDuckCall() {
         return new QuackCounter(new DuckCall());
     }
 
     @Override
-    public Quackalble createRubberDuck() {
+    public Quackable createRubberDuck() {
         return new QuackCounter(new RubberDuck());
     }
 }

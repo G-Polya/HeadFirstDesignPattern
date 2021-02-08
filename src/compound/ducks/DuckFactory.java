@@ -2,22 +2,22 @@ package compound.ducks;
 
 public class DuckFactory extends AbstractDuckFactory {
     @Override
-    public Quackalble createMallardDuck() {
+    public Quackable createMallardDuck() {
         return new MallardDuck();
     }
 
     @Override
-    public Quackalble createRedheadDuck() {
+    public Quackable createRedheadDuck() {
         return new RedheadDuck();
     }
 
     @Override
-    public Quackalble createDuckCall() {
+    public Quackable createDuckCall() {
         return new DuckCall();
     }
 
     @Override
-    public Quackalble createRubberDuck() {
+    public Quackable createRubberDuck() {
         return new RubberDuck();
     }
 }
